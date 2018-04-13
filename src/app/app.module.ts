@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
@@ -19,6 +20,8 @@ import { AdminGuard } from './guards/admin.guard';
 import { SubscriberGuard } from './guards/subscriber.guard';
 
 
+import {MaterialModule} from './material.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,8 @@ import { SubscriberGuard } from './guards/subscriber.guard';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MaterialModule
   ],
   providers: [AfService, AdminGuard, SubscriberGuard],
   bootstrap: [AppComponent]
